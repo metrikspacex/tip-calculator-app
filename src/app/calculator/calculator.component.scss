@@ -1,0 +1,38 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 14.4rem 1fr;
+  min-width: 37.5rem;
+
+  @media (width >= 1440px) {
+    min-width: 92rem;
+  }
+}
+
+div.container {
+  background-color: #fff;
+  border-radius: 2.5rem;
+  box-shadow: 0 3.2rem 4.3rem 0 rgb(79 166 175 / 20%);
+  column-gap: 0;
+  row-gap: 3.2rem;
+  display: grid;
+  grid-template-areas:
+    "input"
+    "percentage"
+    "count"
+    "display";
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, max-content);
+  padding: 3.2rem;
+
+  @media (width >= 1440px) {
+    column-gap: 4.8rem;
+    grid-template-areas:
+      "input      display"
+      "percentage display"
+      "count      display";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 0;
+  }
+}

@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: white;
+  color: black;
+  font-family: Arial;
+  font-size: 10px;
+  font-synthesis: none;
+  font-weight: 700;
+  line-height: 1.5;
+  text-rendering: optimizelegibility;
+  text-size-adjust: 100%;
+}
+
+app-root {
+  background-color: #c5e4e7;
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+}
