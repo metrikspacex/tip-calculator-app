@@ -29,6 +29,7 @@
     "@types/node": "^20.4.8",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
+    "angular-cli-ghpages": "^1.0.6",
     "cypress": "^12.17.3",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^9.0.0",
@@ -57,18 +58,24 @@
     "stylelint-scss": "^5.0.1",
     "typescript": "~5.1.3"
   },
+  "homepage": "https://metrikspacex.github.io/tip-calculator-app",
   "name": "tip-calculator-app",
   "private": true,
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/metrikspacex/tip-calculator-app"
+  },
   "scripts": {
     "build": "ng build",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "deploy": "ng deploy --base-href=/tip-calculator-app/",
+    "e2e": "ng e2e",
     "lint": "ng lint",
     "ng": "ng",
     "start": "ng serve",
     "test": "ng test",
-    "watch": "ng build --watch --configuration development",
-    "e2e": "ng e2e",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "watch": "ng build --watch --configuration development"
   },
   "version": "0.0.0"
 }
