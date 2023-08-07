@@ -1,13 +1,13 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
-import { CalculatorModule } from "./calculator/calculator.module";
 import { RootComponent } from "./root/root.component";
+import { TipModule } from "./tip/tip.module";
 
 @NgModule({
   bootstrap: [RootComponent],
   declarations: [RootComponent],
-  imports: [BrowserModule, CalculatorModule],
+  imports: [BrowserModule, TipModule],
   providers: [],
 })
 export class RootModule {}

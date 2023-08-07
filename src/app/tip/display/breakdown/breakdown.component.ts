@@ -6,6 +6,6 @@ import { Component, Input } from "@angular/core";
   templateUrl: "./breakdown.component.html",
 })
 export class BreakdownComponent {
-  @Input({ required: true }) public content!: string;
   @Input({ required: true }) public amount!: string;
+  @Input({ required: true }) public content!: string;
 }

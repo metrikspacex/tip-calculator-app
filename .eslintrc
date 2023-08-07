@@ -60,7 +60,7 @@
         "@angular-eslint/prefer-on-push-component-change-detection": "off",
         "@angular-eslint/prefer-standalone-component": "off",
         "@typescript-eslint/consistent-type-definitions": "off",
-        "@typescript-eslint/consistent-type-imports": "error",
+        "@typescript-eslint/consistent-type-imports": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/init-declarations": "off",
         "@typescript-eslint/lines-between-class-members": "off",
@@ -85,10 +85,7 @@
         "class-methods-use-this": "off",
         "complexity": "off",
         "consistent-return": "error",
-        "curly": [
-          "error",
-          "all"
-        ],
+        "curly": "off",
         "default-case": "error",
         "dot-notation": "off",
         "eqeqeq": [
