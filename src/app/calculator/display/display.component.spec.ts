@@ -1,6 +1,7 @@
 import type { ComponentFixture } from "@angular/core/testing";
 import { TestBed } from "@angular/core/testing";
 
+import { BreakdownComponent } from "./breakdown/breakdown.component";
 import { DisplayComponent } from "./display.component";
 
 describe("DisplayComponent", () => {
@@ -9,7 +10,7 @@ describe("DisplayComponent", () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DisplayComponent],
+      declarations: [BreakdownComponent, DisplayComponent],
     });
     fixture = TestBed.createComponent(DisplayComponent);
     component = fixture.componentInstance;

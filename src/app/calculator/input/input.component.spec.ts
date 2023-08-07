@@ -19,4 +19,10 @@ describe("InputComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  it("heading text", () => {
+    const root: HTMLElement = fixture.nativeElement as HTMLElement;
+    const heading: HTMLHeadingElement = root.querySelector("h1")!;
+    expect(heading.textContent).toBe("Bill");
+  });
 });

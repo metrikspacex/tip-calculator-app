@@ -33,6 +33,6 @@ div.container {
       "count      display";
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, max-content);
-    row-gap: 0;
+    row-gap: 4rem;
   }
 }

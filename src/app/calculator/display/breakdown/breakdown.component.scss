@@ -1,0 +1,52 @@
+:host {
+  display: block;
+
+  @media (width >= 1440px) {
+    margin-bottom: 4rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+div.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  & > div.content {
+    display: flex;
+    flex-direction: column;
+
+    & > span {
+      color: #fff;
+      font-family: "Space Mono";
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: capitalize;
+
+      &:nth-of-type(2) {
+        color: #7f9d9f;
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  & > span {
+    color: #26c2ae;
+    font-family: Space Mono;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.667px;
+    line-height: normal;
+
+    @media (width >= 1440px) {
+      font-size: 4.8rem;
+      letter-spacing: -1px;
+    }
+  }
+}

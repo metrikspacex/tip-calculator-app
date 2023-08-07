@@ -1,4 +1,68 @@
 :host {
   display: block;
   grid-area: count;
+
+  @media (width >= 1440px) {
+    margin-bottom: 1.6rem;
+  }
+}
+
+h1 {
+  color: #5e7a7d;
+  font-family: "Space Mono";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 0.6rem;
+}
+
+div {
+  align-items: center;
+  background: #f3f9fa;
+  border-radius: 0.5rem;
+  display: flex;
+  height: 4.8rem;
+  padding-block: 0.6rem;
+  padding-inline: 1.6rem;
+  width: 100%;
+
+  & > input {
+    appearance: textfield;
+    background: #f3f9fa;
+    border-style: none;
+    color: #00474b;
+    font-family: "Space Mono";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    height: 100%;
+    line-height: normal;
+    margin-left: 1.6rem;
+    text-align: right;
+    width: 100%;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+
+    &::placeholder {
+      color: #00474b;
+      text-align: right;
+      font-family: Space Mono;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: inherit;
+      box-shadow: none;
+      outline: none;
+    }
+  }
 }

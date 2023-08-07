@@ -1,6 +1,10 @@
 :host {
   display: block;
   grid-area: input;
+
+  @media (width >=1440px) {
+    margin-top: 1.3rem;
+  }
 }
 
 h1 {
@@ -24,6 +28,7 @@ div {
   width: 100%;
 
   & > input {
+    appearance: textfield;
     background: #f3f9fa;
     border-style: none;
     color: #00474b;
@@ -36,6 +41,12 @@ div {
     margin-left: 1.6rem;
     text-align: right;
     width: 100%;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0;
+    }
 
     &::placeholder {
       color: #00474b;

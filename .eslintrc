@@ -40,7 +40,6 @@
         "prettier"
       ],
       "rules": {
-        "spaced-comment": "off",
         "@angular-eslint/component-max-inline-declarations": "off",
         "@angular-eslint/component-selector": [
           "error",
@@ -73,6 +72,7 @@
         "@typescript-eslint/no-extraneous-class": "off",
         "@typescript-eslint/no-magic-numbers": "off",
         "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-type-alias": "off",
         "@typescript-eslint/no-unsafe-call": "off",
         "@typescript-eslint/no-unused-vars": "warn",
@@ -261,6 +261,7 @@
         "sonarjs/no-redundant-jump": "off",
         "sonarjs/prefer-immediate-return": "off",
         "sort-imports": "off",
+        "spaced-comment": "off",
         "strict": "error",
         "unicorn/consistent-function-scoping": "off",
         "unicorn/no-array-reduce": "off",
