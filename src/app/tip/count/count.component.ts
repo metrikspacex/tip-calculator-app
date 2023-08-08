@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
 
 import { TipService } from "../tip.service";
 
@@ -9,19 +8,23 @@ import { TipService } from "../tip.service";
   templateUrl: "./count.component.html",
 })
 export class CountComponent {
-  private readonly tipService: TipService;
+  private tipService: TipService;
 
   public constructor(tipService: TipService) {
     this.tipService = tipService;
   }
 
-  public getAmountOfPeople(): BehaviorSubject<number> {
-    return this.tipService.getAmountOfPeople();
+  protected getError(): boolean {
+    return this.tipService.getError();
   }
 
-  public setAmountOfPeople(event: Event): void {
+  public getPeople(): number {
+    return this.tipService.getPeople();
+  }
+
+  public setPeople(event: Event): void {
     const target = event.target as HTMLInputElement;
     const value = Number.parseInt(target.value);
-    this.tipService.setAmountOfPeople(value);
+    this.tipService.setPeople(value);
   }
 }

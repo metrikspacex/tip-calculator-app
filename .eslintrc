@@ -57,6 +57,7 @@
             "type": "attribute"
           }
         ],
+        "@typescript-eslint/member-ordering": "off",
         "@angular-eslint/prefer-on-push-component-change-detection": "off",
         "@angular-eslint/prefer-standalone-component": "off",
         "@typescript-eslint/consistent-type-definitions": "off",
@@ -78,6 +79,7 @@
         "@typescript-eslint/no-unused-vars": "warn",
         "@typescript-eslint/no-useless-constructor": "off",
         "@typescript-eslint/prefer-for-of": "off",
+        "@typescript-eslint/prefer-readonly": "off",
         "@typescript-eslint/prefer-readonly-parameter-types": "off",
         "accessor-pairs": "error",
         "array-callback-return": "error",

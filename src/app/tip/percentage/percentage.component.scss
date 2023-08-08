@@ -3,14 +3,29 @@
   grid-area: percentage;
 }
 
-h1 {
-  color: #5e7a7d;
-  font-family: "Space Mono";
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+div.heading {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 1.6rem;
+
+  & > h1 {
+    color: #5e7a7d;
+    font-family: "Space Mono";
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  & > p {
+    color: #e17457;
+    font-family: "Space Mono";
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
 }
 
 div.grid-container {
@@ -22,7 +37,8 @@ div.grid-container {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  & > button {
+  & > button,
+  & > input {
     align-items: center;
     background: #00474b;
     border-radius: 0.5rem;
@@ -38,6 +54,7 @@ div.grid-container {
     line-height: normal;
     text-align: center;
     text-transform: uppercase;
+    width: 100%;
 
     &.active {
       background: #26c2ae;
@@ -52,5 +69,10 @@ div.grid-container {
     &:hover {
       cursor: pointer;
     }
+  }
+
+  & > input:focus {
+    background-color: transparent;
+    border: 2px solid #26c2ae;
   }
 }

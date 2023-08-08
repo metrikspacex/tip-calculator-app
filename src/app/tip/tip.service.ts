@@ -5,55 +5,86 @@ import { BehaviorSubject } from "rxjs";
   providedIn: "root",
 })
 export class TipService {
-  private readonly $amountOfPeople = new BehaviorSubject(0);
-  private readonly $cost = new BehaviorSubject(0);
-  private readonly $tipPercentage = new BehaviorSubject(0);
+  private $inputs = new BehaviorSubject({
+    cost: 0,
+    error: false,
+    people: 0,
+    percentage: 0,
+  });
 
   public calculateTips(): string {
-    const cost = this.$cost.getValue();
-    const people = this.$amountOfPeople.getValue();
-    const tip = this.$tipPercentage.getValue();
-    if (cost !== 0 && people !== 0 && tip !== 0)
-      return ((cost * (tip / 100)) / people).toFixed(2);
+    const { cost, people, percentage } = this.$inputs.getValue();
+    if (cost > 0 && people > 0 && percentage > 0)
+      return ((cost * (percentage / 100)) / people).toFixed(2);
     return "0";
   }
 
   public calculateTotal(): string {
-    const cost = this.$cost.getValue();
-    const people = this.$amountOfPeople.getValue();
+    const { cost, people } = this.$inputs.getValue();
     const tip = Number.parseFloat(this.calculateTips());
-    if (cost !== 0 && people !== 0 && tip !== 0)
+    if (cost > 0 && people > 0 && tip > 0)
       return (cost / people + tip).toFixed(2);
     return "0";
   }
 
-  public getAmountOfPeople(): BehaviorSubject<number> {
-    return this.$amountOfPeople;
+  public getCost(): number {
+    return this.$inputs.getValue().cost;
   }
 
-  public getCost(): BehaviorSubject<number> {
-    return this.$cost;
+  public getError(): boolean {
+    return this.$inputs.getValue().error;
   }
 
-  public getTipPercentage(): BehaviorSubject<number> {
-    return this.$tipPercentage;
+  public getPeople(): number {
+    return this.$inputs.getValue().people;
+  }
+
+  public getPercentage(): number {
+    return this.$inputs.getValue().percentage;
   }
 
   public reset(): void {
-    this.$amountOfPeople.next(0);
-    this.$cost.next(0);
-    this.$tipPercentage.next(0);
-  }
-
-  public setAmountOfPeople($amountOfPeople: number): void {
-    this.$amountOfPeople.next($amountOfPeople);
+    this.$inputs.next({
+      cost: 0,
+      error: false,
+      people: 0,
+      percentage: 0,
+    });
   }
 
   public setCost(cost: number): void {
-    this.$cost.next(cost);
+    this.$inputs.next({
+      cost,
+      error: this.$inputs.getValue().error,
+      people: this.$inputs.getValue().people,
+      percentage: this.$inputs.getValue().percentage,
+    });
   }
 
-  public setTipPercentage(tipPercentage: number): void {
-    this.$tipPercentage.next(tipPercentage);
+  public setError(error: boolean): void {
+    this.$inputs.next({
+      cost: this.$inputs.getValue().cost,
+      error,
+      people: this.$inputs.getValue().people,
+      percentage: this.$inputs.getValue().percentage,
+    });
+  }
+
+  public setPeople(people: number): void {
+    this.$inputs.next({
+      cost: this.$inputs.getValue().cost,
+      error: this.$inputs.getValue().error,
+      people,
+      percentage: this.$inputs.getValue().percentage,
+    });
+  }
+
+  public setPercentage(percentage: number): void {
+    this.$inputs.next({
+      cost: this.$inputs.getValue().cost,
+      error: this.$inputs.getValue().error,
+      people: this.$inputs.getValue().people,
+      percentage,
+    });
   }
 }

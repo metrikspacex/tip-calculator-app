@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectorRef, Component } from "@angular/core";
 
 import { TipService } from "../tip.service";
 
@@ -8,9 +8,14 @@ import { TipService } from "../tip.service";
   templateUrl: "./display.component.html",
 })
 export class DisplayComponent {
+  private readonly changeDetectorRef: ChangeDetectorRef;
   private readonly tipService: TipService;
 
-  public constructor(tipService: TipService) {
+  public constructor(
+    changeDetectorRef: ChangeDetectorRef,
+    tipService: TipService
+  ) {
+    this.changeDetectorRef = changeDetectorRef;
     this.tipService = tipService;
   }
 
@@ -24,5 +29,6 @@ export class DisplayComponent {
 
   public reset(): void {
     this.tipService.reset();
+    this.changeDetectorRef.detectChanges();
   }
 }

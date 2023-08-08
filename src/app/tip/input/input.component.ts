@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
 
 import { TipService } from "../tip.service";
 
@@ -15,13 +14,18 @@ export class InputComponent {
     this.tipService = tipService;
   }
 
-  protected getCost(): BehaviorSubject<number> {
+  protected getCost(): number {
     return this.tipService.getCost();
+  }
+
+  protected getError(): boolean {
+    return this.tipService.getError();
   }
 
   protected setCost(event: Event): void {
     const target = event.target as HTMLInputElement;
     const value = Number.parseFloat(target.value);
+    if (value <= 0) this.tipService.setError(true);
     this.tipService.setCost(value);
   }
 }

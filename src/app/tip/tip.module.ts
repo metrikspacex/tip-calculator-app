@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { CountComponent } from "./count/count.component";
 import { BreakdownComponent } from "./display/breakdown/breakdown.component";
@@ -22,7 +22,7 @@ import { TipService } from "./tip.service";
     TipComponent,
   ],
   exports: [TipComponent],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   providers: [TipService],
 })
 export class TipModule {}

@@ -1,9 +1,47 @@
-<h1>Select Tip %</h1>
+<div class="heading">
+  <h1>Select Tip %</h1>
+  <p *ngIf="this.getPercentage() === 0 && this.getError() === true">
+    Can't be zero
+  </p>
+  <p *ngIf="this.getPercentage() < 0 && this.getError() === true">
+    Can't be negative
+  </p>
+</div>
 <div class="grid-container">
-  <button type="button" (click)="this.setTipPercentage(5)">5%</button>
-  <button type="button" (click)="this.setTipPercentage(10)">10%</button>
-  <button type="button" (click)="this.setTipPercentage(15)">15%</button>
-  <button type="button" (click)="this.setTipPercentage(25)">25%</button>
-  <button type="button" (click)="this.setTipPercentage(50)">50%</button>
-  <button class="custom" type="button">custom</button>
+  <button
+    type="button"
+    [ngClass]="{ active: this.getPercentage() === 5 }"
+    (click)="this.setPercentage(5)">
+    5%
+  </button>
+  <button
+    type="button"
+    [ngClass]="{ active: this.getPercentage() === 10 }"
+    (click)="this.setPercentage(10)">
+    10%
+  </button>
+  <button
+    type="button"
+    [ngClass]="{ active: this.getPercentage() === 15 }"
+    (click)="this.setPercentage(15)">
+    15%
+  </button>
+  <button
+    type="button"
+    [ngClass]="{ active: this.getPercentage() === 25 }"
+    (click)="this.setPercentage(25)">
+    25%
+  </button>
+  <button
+    type="button"
+    [ngClass]="{ active: this.getPercentage() === 50 }"
+    (click)="this.setPercentage(50)">
+    50%
+  </button>
+  <input
+    class="custom"
+    placeholder="custom"
+    type="text"
+    [value]="this.getPercentage()"
+    (change)="this.setCustomPercentage($event)" />
 </div>

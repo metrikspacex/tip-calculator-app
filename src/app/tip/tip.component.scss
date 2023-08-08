@@ -2,10 +2,10 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 14.4rem 1fr;
-  min-width: 37.5rem;
+  width: 37.5rem;
 
   @media (width >= 1440px) {
-    min-width: 92rem;
+    width: 92rem;
   }
 }
 
