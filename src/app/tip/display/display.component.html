@@ -2,4 +2,9 @@
   <app-breakdown content="tip amount" [amount]="this.calculateTips()" />
   <app-breakdown content="total amount" [amount]="this.calculateTotals()" />
 </div>
-<button type="button" (click)="this.reset()">reset</button>
+<button
+  type="button"
+  [disabled]="this.calculateTips() === '0' && this.calculateTotals() === '0'"
+  (click)="this.reset()">
+  reset
+</button>
